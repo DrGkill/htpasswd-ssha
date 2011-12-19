@@ -1,11 +1,29 @@
-* Introduction
+* Introduction:
 	htpasswd-ssha is a replacement of the well known apache htpasswd.
 	All written in pure perl, it allows you to crypt SSHA passowrd for
 	nginx per example.
 
-* Requirement
-
+* Requirement:
 	This program need to be run :
 		- Perl 5 or newer
 		- Digest::SHA1 perl library
 		- Term::ReadKey perl library
+
+* Usage:
+
+        htpasswd [-cmdsD] passwordfile username
+        htpasswd -n[mds] username
+        htpasswd -nb[mds] username password
+
+ -c  Create a new file.
+ -n  Don't update file; display results on stdout.
+ -m  Force MD5 encryption of the password (not yet implemented).
+ -d  Force CRYPT encryption of the password (not yet implemented).
+ -s  Force SSHA encryption of the password (default).
+ -D  Delete the specified user.sage: htpasswd opts [-c file] username [password]
+ 
+
+* Example:
+	htpasswd-ssha -cn mypassfile username
+
+
